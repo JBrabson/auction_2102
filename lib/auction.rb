@@ -15,5 +15,15 @@ class Auction
     end
   end
 
+  def unpopular_items
+    no_likey = []
+    @items.each do |item|
+      # require 'pry'; binding.pry
+      if item.bids == {}
+        no_likey << item
+      end
+    end
+    no_likey
+  end
 
 end
