@@ -24,4 +24,13 @@ class AuctionTest < Minitest::Test
     @auction.add_item(item2)
     assert_equal [item1, item2], @auction.items
   end
+
+  def test_it_knows_item_names
+    item1 = Item.new('Chalkware Piggy Bank')
+    item2 = Item.new('Bamboo Picture Frame')
+    @auction.add_item(item1)
+    @auction.add_item(item2)
+    expected = ["Chalkware Piggy Bank", "Bamboo Picture Frame"]
+    assert_equal expected, @auction.item_names
+  end
 end
