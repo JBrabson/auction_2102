@@ -20,4 +20,13 @@ class Auction
       item.bids == {}
     end
   end
+
+  def potential_revenue
+    high_bids = []
+    @items.each do |item|
+      high_bids << item.current_high_bid
+      # require 'pry'; binding.pry
+    end
+    high_bids.compact.sum
+  end
 end
